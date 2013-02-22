@@ -9,14 +9,15 @@
         Bundle 'ervandew/supertab'
         Bundle 'gmarik/vundle'
         Bundle 'godlygeek/tabular'
+        Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/nerdtree'
         Bundle 'scrooloose/syntastic'
         Bundle 'sjl/gundo.vim'
         Bundle 'tpope/vim-fugitive'
         Bundle 'tpope/vim-surround'
-        Bundle 'vim-scripts/yankring.vim'
         Bundle 'vim-scripts/mru.vim'
+        Bundle 'vim-scripts/yankring.vim'
         Bundle 'wincent/command-t'
     " }
     filetype plugin indent on
@@ -40,12 +41,14 @@
         set history=50
         set clipboard=unnamed
         set backspace=indent,eol,start
+        set laststatus=2
     " }
     " Visual {
         set hlsearch
         set number
         set showmatch
         set showcmd
+        set noshowmode
         set scrolloff=3
         syntax on
     " }
@@ -189,6 +192,15 @@
     " NerdCommenter {
         let NERDSpaceDelims = 1
         let NERDRemoveExtraSpaces = 1
+    " }
+    " Syntastic {
+        let g:syntastic_enable_signs=1
+        let g:syntastic_error_symbol='X'
+        let g:syntastic_warning_symbol='!'
+        let g:syntastic_enable_balloons=1
+        let g:syntastic_enable_highlighting=1
+        let g:syntastic_echo_current_error=1
+        let g:syntastic_python_checkers = ['flake8']
     " }
 " }
 " vim: set fdm=marker fmr={,}:
