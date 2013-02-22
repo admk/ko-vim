@@ -44,7 +44,7 @@
         set shiftwidth=4
         set textwidth=79
         set colorcolumn=+1
-        set formatoptions=rqlmB1j
+        set formatoptions=rqlmB1
         set formatprg=par\ -w79
     " }
     " Indentation {
@@ -72,11 +72,11 @@
 	set background=dark
 	set guifont=Menlo\ for\ Powerline:h15
 	if has("gui_running")
-		set guioptions-=rLT
-	else
-	    colors default
-	endif
-	colors solarized
+		set guioptions-=r
+		set guioptions-=L
+		set guioptions-=T
+    endif
+    colors solarized
     let g:solarized_visibility="low"
     let g:solarized_menu=0
 	" Mac specific
@@ -96,7 +96,6 @@
         noremap / q/i
         noremap ? q?i
 		noremap K k
-		noremap <C-[> <ESC>:po<CR>
 		let mapleader=","
 		nnoremap <leader><space> :nohlsearch<CR>
 		nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>  " strip spaces
