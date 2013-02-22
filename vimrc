@@ -4,20 +4,20 @@
     " Setup {
         set runtimepath+=~/.vim/bundle/vundle
         call vundle#rc()
-        Bundle 'gmarik/vundle'
-        Bundle 'tpope/vim-fugitive'
-        Bundle 'wincent/Command-T'
-        Bundle 'sjl/gundo.vim'
-        Bundle 'scrooloose/nerdcommenter'
-        Bundle 'vim-scripts/mru.vim'
-        Bundle 'scrooloose/nerdtree'
-        Bundle 'ervandew/supertab'
-        Bundle 'tpope/vim-surround'
-        Bundle 'scrooloose/syntastic'
-        Bundle 'godlygeek/tabular'
-        Bundle 'ehamberg/vim-cute-python'
-        Bundle 'vim-scripts/YankRing.vim'
         Bundle 'altercation/vim-colors-solarized'
+        Bundle 'ehamberg/vim-cute-python'
+        Bundle 'ervandew/supertab'
+        Bundle 'gmarik/vundle'
+        Bundle 'godlygeek/tabular'
+        Bundle 'scrooloose/nerdcommenter'
+        Bundle 'scrooloose/nerdtree'
+        Bundle 'scrooloose/syntastic'
+        Bundle 'sjl/gundo.vim'
+        Bundle 'tpope/vim-fugitive'
+        Bundle 'tpope/vim-surround'
+        Bundle 'vim-scripts/yankring.vim'
+        Bundle 'vim-scripts/mru.vim'
+        Bundle 'wincent/command-t'
     " }
     filetype plugin indent on
 " }
