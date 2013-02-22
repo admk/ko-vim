@@ -179,7 +179,7 @@
         let Tex_UseMakefile=0
     "}
     " NERDTree {
-    let NERDTreeIgnore=['\.py[co]$', '\~$']
+        let NERDTreeIgnore=['\.py[co]$', '\~$']
     " }
     " Command-T {
         let g:CommandTMaxHeight = 15
