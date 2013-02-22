@@ -10,7 +10,9 @@
         set encoding=utf-8
         set termencoding=utf-8
         set fileencoding=utf-8
-        autocmd FileType markdown,rst,tex setlocal spell
+        autocmd FileType markdown,rst,tex,latex setlocal spell
+        autocmd FileType tex,latex setlocal iskeyword+=_ cole=2 nocursorline
+        let g:tex_conceal = 'admg'
     " }
     " Functional {
         set nocompatible
