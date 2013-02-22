@@ -70,21 +70,25 @@
     " }
 " }
 " User interface {
-	set cursorline
-	set background=dark
-	set guifont=Menlo\ for\ Powerline:h15
-	if has("gui_running")
-		set guioptions-=r
-		set guioptions-=L
-		set guioptions-=T
-    endif
-    colors solarized
-    let g:solarized_visibility="low"
-    let g:solarized_menu=0
-	" Mac specific
-	if has("gui_macvim")
-		set macmeta
-	endif
+    " General {
+        if has("gui_running")
+            set guioptions-=r
+            set guioptions-=L
+            set guioptions-=T
+        endif
+        set cursorline
+        " Mac specific
+        if has("gui_macvim")
+            set macmeta
+        endif
+	" }
+	" Colorscheme {
+        set guifont=Menlo\ for\ Powerline:h15
+        set background=dark
+        colors solarized
+        let g:solarized_visibility="low"
+        let g:solarized_menu=0
+    " }
 " }
 " Shortcuts {
     " Essential {
