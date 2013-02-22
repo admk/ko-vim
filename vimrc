@@ -97,6 +97,7 @@
 		inoremap jk <ESC>
 		nnoremap j gj
 		nnoremap k gk
+		nnoremap Y y$
     " }
     " General {
         noremap / q/i
