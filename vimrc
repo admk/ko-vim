@@ -89,6 +89,10 @@
         let g:solarized_visibility="low"
         let g:solarized_menu=0
     " }
+	" Highlight hacks {
+        highlight! link SignColumn ColorColumn
+        highlight! MatchParen ctermbg=NONE guibg=NONE
+	" }
 " }
 " Shortcuts {
     " Essential {
