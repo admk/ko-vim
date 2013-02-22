@@ -157,5 +157,38 @@
         noremap  <C-u>4 yypVr-
         noremap  <C-u>5 yypVr^
     " }
+    " Other {
+        nnoremap <leader>mr :MRU<cr>
+        nnoremap <leader>nt :NERDTreeToggle<cr>
+        nnoremap <leader>yy :YRShow<CR>
+        nnoremap <leader>gt :GundoToggle<CR>
+        nnoremap <leader>= :Tabularize /=<CR>
+    " }
+" }
+" Third party bundles {
+    " yankring {
+        let g:yankring_history_file = '.yankring_history'
+    " }
+    " vim-latex - many latex shortcuts and snippets {
+        let g:tex_flavor='latex'
+        let g:Tex_CompileRule_pdf='xelatex -shell-escape'
+        let g:Tex_Menus=0
+        let Tex_UseMakefile=0
+    "}
+    " NERDTree {
+    let NERDTreeIgnore=['\.py[co]$', '\~$']
+    " }
+    " Command-T {
+        let g:CommandTMaxHeight = 15
+    " }
+    " SuperTab {
+        let g:SuperTabDefaultCompletionType = "context"
+        let g:SuperTabLongestEnhanced = 1
+        let g:SuperTabLongestHighlight = 1
+    " }
+    " NerdCommenter {
+        let NERDSpaceDelims = 1
+        let NERDRemoveExtraSpaces = 1
+    " }
 " }
 " vim: set fdm=marker fmr={,}:
