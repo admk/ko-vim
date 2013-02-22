@@ -5,6 +5,19 @@
         set runtimepath+=~/.vim/bundle/vundle
         call vundle#rc()
         Bundle 'gmarik/vundle'
+        Bundle 'tpope/vim-fugitive'
+        Bundle 'wincent/Command-T'
+        Bundle 'sjl/gundo.vim'
+        Bundle 'scrooloose/nerdcommenter'
+        Bundle 'vim-scripts/mru.vim'
+        Bundle 'scrooloose/nerdtree'
+        Bundle 'ervandew/supertab'
+        Bundle 'tpope/vim-surround'
+        Bundle 'scrooloose/syntastic'
+        Bundle 'godlygeek/tabular'
+        Bundle 'ehamberg/vim-cute-python'
+        Bundle 'vim-scripts/YankRing.vim'
+        Bundle 'altercation/vim-colors-solarized'
     " }
     filetype plugin indent on
 " }
