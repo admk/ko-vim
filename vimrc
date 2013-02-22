@@ -1,12 +1,18 @@
 " Xitong Gao's vimrc
+" Vundle {
+    filetype off
+    " Setup {
+        set runtimepath+=~/.vim/bundle/vundle
+        call vundle#rc()
+        Bundle 'gmarik/vundle'
+    " }
+    filetype plugin indent on
+" }
 " General {
     " File {
         set noswapfile
         set hidden
         set autoread
-        filetype on
-        filetype indent on
-        filetype plugin on
         set encoding=utf-8
         set termencoding=utf-8
         set fileencoding=utf-8
@@ -139,7 +145,5 @@
         noremap  <C-u>4 yypVr-
         noremap  <C-u>5 yypVr^
     " }
-" }
-" Vundle {
 " }
 " vim: set fdm=marker fmr={,}:
