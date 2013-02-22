@@ -1,0 +1,6 @@
+.DS_Store
+view/
+spell/
+*.py[cxo]
+*.sw*
+session.vim
