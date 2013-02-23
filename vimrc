@@ -103,35 +103,35 @@
         if has("gui_macvim")
             set macmeta
         endif
-	" }
-	" Colorscheme {
+    " }
+    " Colorscheme {
         set guifont=Menlo\ for\ Powerline:h15
         set background=dark
         colors solarized
         let g:solarized_visibility="low"
         let g:solarized_menu=0
     " }
-	" Highlight hacks {
+    " Highlight hacks {
         highlight! link SignColumn ColorColumn
         highlight! MatchParen ctermbg=NONE guibg=NONE
-	" }
+    " }
 " }
 " Shortcuts {
     " Essential {
-		nnoremap ; :
-		vnoremap ; :
-		inoremap jk <ESC>
-		nnoremap j gj
-		nnoremap k gk
-		nnoremap Y y$
+        nnoremap ; :
+        vnoremap ; :
+        inoremap jk <ESC>
+        nnoremap j gj
+        nnoremap k gk
+        nnoremap Y y$
     " }
     " General {
         noremap / q/i
         noremap ? q?i
-		noremap K k
-		let mapleader=","
-		nnoremap <leader><space> :nohlsearch<CR>
-		nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>  " strip spaces
+        noremap K k
+        let mapleader=","
+        nnoremap <leader><space> :nohlsearch<CR>
+        nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>  " strip spaces
     " }
     " Visual mode {
         nnoremap gp `[v`]
