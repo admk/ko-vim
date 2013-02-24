@@ -17,8 +17,8 @@
         Bundle 'tpope/vim-fugitive'
         Bundle 'tpope/vim-surround'
         Bundle 'vim-scripts/mru.vim'
-        Bundle 'vim-scripts/yankring.vim'
-        Bundle 'wincent/command-t'
+        Bundle 'vim-scripts/YankRing.vim'
+        Bundle 'wincent/Command-T'
     " }
     filetype plugin indent on
 " }
