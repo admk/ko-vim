@@ -1,6 +1,6 @@
 " Xitong Gao's vimrc
 " Vundle {
-    source bundles.vim
+    source ~/.vim/bundles.vim
 " }
 " General {
     " File {
