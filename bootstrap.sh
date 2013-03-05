@@ -17,9 +17,9 @@ else
 fi
 
 echo 'Linking'
+cd $HOME
 ln -sf $VIM $HOME/.vim
 ln -sf $VIM/vimrc $HOME/.vimrc
-ln -sf $VIM/gvimrc $HOME/.gvimrc
 
 echo 'Initialising Vundle'
 git clone http://github.com/gmarik/vundle.git $VIM/bundle/vundle
