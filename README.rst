@@ -13,6 +13,13 @@ Copy & paste the following line into terminal::
 Changelog
 =========
 
+Version 1.1
+-----------
+
+*Tue  5 Mar 2013 14:04:48 GMT*
+
+Fix bundles.vim not sourced.
+
 Version 1.0
 -----------
 
