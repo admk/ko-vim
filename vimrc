@@ -1,8 +1,8 @@
 " Xitong Gao's vimrc
-" Vundle {
-    source ~/.vim/bundles.vim
-" }
 " General {
+    " Vundle {
+        source ~/.vim/bundles.vim
+    " }
     " File {
         set noswapfile
         set hidden
@@ -93,7 +93,7 @@
     " }
     " Highlight hacks {
         highlight! link SignColumn ColorColumn
-        highlight! MatchParen ctermbg=NONE guibg=NONE
+        highlight clear MatchParen
     " }
 " }
 " Shortcuts {
