@@ -124,11 +124,6 @@
         cnoremap <C-K> <C-U>
         cnoremap cd. lcd %:p:h
     " }
-    " Error window TODO replace by Tim Pope's plugin {
-        map <leader>co :botright cope<CR>
-        map <leader>] :cn<CR>
-        map <leader>[ :cp<CR>
-    " }
     " Window management {
         nnoremap <M-h> <C-w>h
         nnoremap <M-j> <C-w>j
