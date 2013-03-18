@@ -25,7 +25,9 @@
     filetype plugin indent on
 " }
 " Bundle configurations {
+    let mapleader=","
     " yankring {
+        nnoremap <leader>yy :YRShow<CR>
         let g:yankring_history_file = '.yankring_history'
     " }
     " vim-latex - many latex shortcuts and snippets {
@@ -35,6 +37,7 @@
         let Tex_UseMakefile=0
     "}
     " NERDTree {
+        nnoremap <leader>nt :NERDTreeToggle<cr>
         let NERDTreeIgnore=['\.py[co]$', '\~$']
     " }
     " Command-T {
@@ -54,6 +57,12 @@
         let g:syntastic_warning_symbol='!'
         let g:syntastic_enable_highlighting=1
         let g:syntastic_python_checkers = ['flake8']
+    " }
+    " Gundo {
+        nnoremap <leader>gt :GundoToggle<CR>
+    " }
+    " Tabularize {
+        nnoremap <leader>= :Tabularize /=<CR>
     " }
 " }
 " vim: set fdm=marker fmr={,}:

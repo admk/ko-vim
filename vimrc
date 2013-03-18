@@ -146,12 +146,5 @@
         noremap  <C-u>4 yypVr-
         noremap  <C-u>5 yypVr^
     " }
-    " Other {
-        nnoremap <leader>mr :MRU<cr>
-        nnoremap <leader>nt :NERDTreeToggle<cr>
-        nnoremap <leader>yy :YRShow<CR>
-        nnoremap <leader>gt :GundoToggle<CR>
-        nnoremap <leader>= :Tabularize /=<CR>
-    " }
 " }
 " vim: set fdm=marker fmr={,}:
