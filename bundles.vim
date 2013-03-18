@@ -10,6 +10,7 @@
         Bundle 'ervandew/supertab'
         Bundle 'gmarik/vundle'
         Bundle 'godlygeek/tabular'
+        Bundle 'kien/ctrlp.vim'
         Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/nerdtree'
@@ -18,14 +19,16 @@
         Bundle 'tpope/vim-fugitive'
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-unimpaired'
-        Bundle 'vim-scripts/mru.vim'
         Bundle 'vim-scripts/YankRing.vim'
-        Bundle 'wincent/Command-T'
     " }
     filetype plugin indent on
 " }
 " Bundle configurations {
     let mapleader=","
+    " CtrlP {
+        nnoremap <leader>cp :CtrlP<cr>
+        nnoremap <leader>mr :CtrlPMRUFiles<cr>
+    " }
     " yankring {
         nnoremap <leader>yy :YRShow<CR>
         let g:yankring_history_file = '.yankring_history'
