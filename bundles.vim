@@ -6,6 +6,7 @@
     " Bundles {
         Bundle 'airblade/vim-gitgutter'
         Bundle 'altercation/vim-colors-solarized'
+        Bundle 'davidhalter/jedi-vim'
         Bundle 'ehamberg/vim-cute-python'
         Bundle 'ervandew/supertab'
         Bundle 'gmarik/vundle'
@@ -66,6 +67,9 @@
     " }
     " Tabularize {
         nnoremap <leader>= :Tabularize /=<CR>
+    " }
+    " Jedi {
+        let g:jedi#popup_on_dot = 0
     " }
 " }
 " vim: set fdm=marker fmr={,}:
