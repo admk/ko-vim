@@ -13,6 +13,16 @@ Copy & paste the following line into terminal::
 Changelog
 =========
 
+Version 2.0
+-----------
+
+*Tue  2 Apr 2013 19:31:03 BST*
+
+* Add jedi for python.
+* Replace MRU and CommandT by ctrlp.
+* Add tpope-unimpaired.
+* Misc fixes.
+
 Version 1.1
 -----------
 
