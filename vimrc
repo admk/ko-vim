@@ -1,8 +1,8 @@
 " Xitong Gao's vimrc
-" Vundle {
-    source ~/.vim/bundles.vim
-" }
 " General {
+    " Vundle {
+        source ~/.vim/bundles.vim
+    " }
     " File {
         set noswapfile
         set hidden
@@ -93,7 +93,7 @@
     " }
     " Highlight hacks {
         highlight! link SignColumn ColorColumn
-        highlight! MatchParen ctermbg=NONE guibg=NONE
+        highlight clear MatchParen
     " }
 " }
 " Shortcuts {
@@ -124,20 +124,15 @@
         cnoremap <C-K> <C-U>
         cnoremap cd. lcd %:p:h
     " }
-    " Error window TODO replace by Tim Pope's plugin {
-        map <leader>co :botright cope<CR>
-        map <leader>] :cn<CR>
-        map <leader>[ :cp<CR>
-    " }
     " Window management {
-        nnoremap <M-h> <C-w>h
-        nnoremap <M-j> <C-w>j
-        nnoremap <M-k> <C-w>k
-        nnoremap <M-l> <C-w>l
-        nnoremap <M--> <C-w>-
-        nnoremap <M-=> <C-w>+
-        nnoremap <M-,> <C-w><
-        nnoremap <M-.> <C-w>>
+        nnoremap <M-h> :wincmd h<CR>
+        nnoremap <M-j> :wincmd j<CR>
+        nnoremap <M-k> :wincmd k<CR>
+        nnoremap <M-l> :wincmd l<CR>
+        nnoremap <M--> :wincmd -<CR>
+        nnoremap <M-=> :wincmd +<CR>
+        nnoremap <M-,> :wincmd <<CR>
+        nnoremap <M-.> :wincmd ><CR>
     " }
     " Tab management {
         nnoremap <C-w>t :tabnew<CR>
@@ -150,48 +145,6 @@
         noremap  <C-u>3 yypVr=
         noremap  <C-u>4 yypVr-
         noremap  <C-u>5 yypVr^
-    " }
-    " Other {
-        nnoremap <leader>mr :MRU<cr>
-        nnoremap <leader>nt :NERDTreeToggle<cr>
-        nnoremap <leader>yy :YRShow<CR>
-        nnoremap <leader>gt :GundoToggle<CR>
-        nnoremap <leader>= :Tabularize /=<CR>
-    " }
-" }
-" Third party bundles {
-    " yankring {
-        let g:yankring_history_file = '.yankring_history'
-    " }
-    " vim-latex - many latex shortcuts and snippets {
-        let g:tex_flavor='latex'
-        let g:Tex_CompileRule_pdf='xelatex -shell-escape'
-        let g:Tex_Menus=0
-        let Tex_UseMakefile=0
-    "}
-    " NERDTree {
-        let NERDTreeIgnore=['\.py[co]$', '\~$']
-    " }
-    " Command-T {
-        let g:CommandTMaxHeight = 15
-    " }
-    " SuperTab {
-        let g:SuperTabDefaultCompletionType = "context"
-        let g:SuperTabLongestEnhanced = 1
-        let g:SuperTabLongestHighlight = 1
-    " }
-    " NerdCommenter {
-        let NERDSpaceDelims = 1
-        let NERDRemoveExtraSpaces = 1
-    " }
-    " Syntastic {
-        let g:syntastic_enable_signs=1
-        let g:syntastic_error_symbol='X'
-        let g:syntastic_warning_symbol='!'
-        let g:syntastic_enable_balloons=1
-        let g:syntastic_enable_highlighting=1
-        let g:syntastic_echo_current_error=1
-        let g:syntastic_python_checkers = ['flake8']
     " }
 " }
 " vim: set fdm=marker fmr={,}:

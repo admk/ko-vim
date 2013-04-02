@@ -25,9 +25,4 @@ echo 'Initialising Vundle'
 git clone http://github.com/gmarik/vundle.git $VIM/bundle/vundle
 
 echo 'Installing all bundles'
-vim -u $VIM/bundles.vim +BundleInstall +qall
-
-echo 'Installing Command-T'
-cd $VIM/bundle/command-t/ruby/command-t
-ruby extconf.rb
-make
+vim -u $VIM/bundles.vim +BundleInstall! +BundleClean +qall
