@@ -125,14 +125,14 @@
         cnoremap cd. lcd %:p:h
     " }
     " Window management {
-        nnoremap <M-h> <C-w>h
-        nnoremap <M-j> <C-w>j
-        nnoremap <M-k> <C-w>k
-        nnoremap <M-l> <C-w>l
-        nnoremap <M--> <C-w>-
-        nnoremap <M-=> <C-w>+
-        nnoremap <M-,> <C-w><
-        nnoremap <M-.> <C-w>>
+        nnoremap <M-h> :wincmd h<CR>
+        nnoremap <M-j> :wincmd j<CR>
+        nnoremap <M-k> :wincmd k<CR>
+        nnoremap <M-l> :wincmd l<CR>
+        nnoremap <M--> :wincmd -<CR>
+        nnoremap <M-=> :wincmd +<CR>
+        nnoremap <M-,> :wincmd <<CR>
+        nnoremap <M-.> :wincmd ><CR>
     " }
     " Tab management {
         nnoremap <C-w>t :tabnew<CR>
