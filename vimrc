@@ -86,7 +86,19 @@
         endif
     " }
     " Colorscheme {
-        set guifont=Menlo\ for\ Powerline:h15
+        let s:fonts=['Menlo\ for\ Powerline', 'Menlo', 'Monospace']
+        let s:font_format=[':h15', '\ 15']
+        for format in s:font_format
+            for font in s:fonts
+                if !empty(&guifont)
+                    break
+                endif
+                try
+                    execute 'set guifont=' . font . format
+                catch
+                endtry
+            endfor
+        endfor
         set background=dark
         colors solarized
         let g:solarized_visibility="low"
