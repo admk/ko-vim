@@ -132,9 +132,9 @@
         vnoremap > >gv
     " }
     " Command line {
-        cnoremap <C-A> <Home>
-        cnoremap <C-E> <End>
-        cnoremap <C-K> <C-U>
+        cnoremap <C-a> <Home>
+        cnoremap <C-e> <End>
+        cnoremap <C-k> <C-u>
         cnoremap cd. lcd %:p:h
     " }
     " Window management {
@@ -153,11 +153,11 @@
         nnoremap <C-w>] :tabnext<CR>
     " }
     " Writing Restructured Text or Markdown {
-        noremap  <C-u>1 yyPVr#yyjp
-        noremap  <C-u>2 yyPVr*yyjp
-        noremap  <C-u>3 yypVr=
-        noremap  <C-u>4 yypVr-
-        noremap  <C-u>5 yypVr^
+        noremap <C-u>1 yyPVr#yyjp
+        noremap <C-u>2 yyPVr*yyjp
+        noremap <C-u>3 yypVr=
+        noremap <C-u>4 yypVr-
+        noremap <C-u>5 yypVr^
     " }
 " }
 " vim: set fdm=marker fmr={,}:
