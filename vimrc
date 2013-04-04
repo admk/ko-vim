@@ -24,6 +24,7 @@
         set clipboard=unnamed
         set backspace=indent,eol,start
         set laststatus=2
+        set mouse=a
     " }
     " Visual {
         set hlsearch
