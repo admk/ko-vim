@@ -138,14 +138,17 @@
         cnoremap cd. lcd %:p:h
     " }
     " Window management {
-        nnoremap <M-h> :wincmd h<CR>
-        nnoremap <M-j> :wincmd j<CR>
-        nnoremap <M-k> :wincmd k<CR>
-        nnoremap <M-l> :wincmd l<CR>
-        nnoremap <M--> :wincmd -<CR>
-        nnoremap <M-=> :wincmd +<CR>
-        nnoremap <M-,> :wincmd <<CR>
-        nnoremap <M-.> :wincmd ><CR>
+        for l in [['h'], ['j'], ['k'], ['l'], ['w'],
+                \ ['-'], ['=', '+'], [',', '<'], ['.', '>']]
+            if len(l) == 1
+                let s:l = l + l
+            else
+                let s:l = l
+            endif
+            let s:wincmd = ' :wincmd ' . s:l[1] . '<CR>'
+            execute 'nnoremap <M-' . s:l[0] . '>' . s:wincmd
+            execute 'nnoremap <Esc>' . s:l[0] . s:wincmd
+        endfor
     " }
     " Tab management {
         nnoremap <C-w>t :tabnew<CR>
