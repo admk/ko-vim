@@ -10,7 +10,7 @@ done
 
 echo 'Initialising Vim config'
 if [ ! -e $VIM/.git ]; then
-    git clone -b master https://github.com/admk/vimfiles.git $VIM
+    git clone -b master https://github.com/admk/ko-vim.git $VIM
 else
     cd $VIM
     git pull
