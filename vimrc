@@ -112,11 +112,11 @@
         nnoremap j gj
         nnoremap k gk
         nnoremap Y y$
+        inoremap £ #
     " }
     " General {
         noremap / q/i
         noremap ? q?i
-        noremap K k
         let mapleader=","
         nnoremap <leader><space> :nohlsearch<CR>
         nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>  " strip spaces
