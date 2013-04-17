@@ -21,7 +21,9 @@
         set ignorecase
         set smartcase
         set history=50
-        set clipboard=unnamed
+        if empty($TMUX)
+            set clipboard=unnamedplus
+        endif
         set backspace=indent,eol,start
         set laststatus=2
         set mouse=a
@@ -86,23 +88,16 @@
         endif
     " }
     " Colorscheme {
-        let s:fonts=['Menlo\ for\ Powerline', 'Menlo', 'Monospace']
-        let s:font_format=[':h15', '\ 15']
-        for format in s:font_format
-            for font in s:fonts
-                if !empty(&guifont)
-                    break
-                endif
-                try
-                    execute 'set guifont=' . font . format
-                catch
-                endtry
-            endfor
-        endfor
         set background=dark
-        colors solarized
-        let g:solarized_visibility="low"
-        let g:solarized_menu=0
+        if has("gui_running")
+            set guifont=Menlo\ for\ Powerline:h15
+            colorscheme solarized
+            let g:solarized_visibility="low"
+            let g:solarized_menu=0
+        else
+            colorscheme Tomorrow-Night
+            set t_Co=256
+        endif
     " }
     " Highlight hacks {
         highlight! link SignColumn ColorColumn
