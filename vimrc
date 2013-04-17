@@ -1,8 +1,8 @@
 " Xitong Gao's vimrc
-" Vundle {
-    source ~/.vim/bundles.vim
-" }
 " General {
+    " Vundle {
+        source ~/.vim/bundles.vim
+    " }
     " File {
         set noswapfile
         set hidden
@@ -21,9 +21,12 @@
         set ignorecase
         set smartcase
         set history=50
-        set clipboard=unnamed
+        if empty($TMUX)
+            set clipboard=unnamed
+        endif
         set backspace=indent,eol,start
         set laststatus=2
+        set mouse=a
     " }
     " Visual {
         set hlsearch
@@ -85,15 +88,20 @@
         endif
     " }
     " Colorscheme {
-        set guifont=Menlo\ for\ Powerline:h15
         set background=dark
-        colors solarized
-        let g:solarized_visibility="low"
-        let g:solarized_menu=0
+        if has("gui_running")
+            set guifont=Menlo\ for\ Powerline:h15
+            colorscheme solarized
+            let g:solarized_visibility="low"
+            let g:solarized_menu=0
+        else
+            colorscheme Tomorrow-Night
+            set t_Co=256
+        endif
     " }
     " Highlight hacks {
         highlight! link SignColumn ColorColumn
-        highlight! MatchParen ctermbg=NONE guibg=NONE
+        highlight clear MatchParen
     " }
 " }
 " Shortcuts {
@@ -104,11 +112,11 @@
         nnoremap j gj
         nnoremap k gk
         nnoremap Y y$
+        inoremap £ #
     " }
     " General {
         noremap / q/i
         noremap ? q?i
-        noremap K k
         let mapleader=","
         nnoremap <leader><space> :nohlsearch<CR>
         nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>  " strip spaces
@@ -119,25 +127,23 @@
         vnoremap > >gv
     " }
     " Command line {
-        cnoremap <C-A> <Home>
-        cnoremap <C-E> <End>
-        cnoremap <C-K> <C-U>
+        cnoremap <C-a> <Home>
+        cnoremap <C-e> <End>
+        cnoremap <C-k> <C-u>
         cnoremap cd. lcd %:p:h
     " }
-    " Error window TODO replace by Tim Pope's plugin {
-        map <leader>co :botright cope<CR>
-        map <leader>] :cn<CR>
-        map <leader>[ :cp<CR>
-    " }
     " Window management {
-        nnoremap <M-h> <C-w>h
-        nnoremap <M-j> <C-w>j
-        nnoremap <M-k> <C-w>k
-        nnoremap <M-l> <C-w>l
-        nnoremap <M--> <C-w>-
-        nnoremap <M-=> <C-w>+
-        nnoremap <M-,> <C-w><
-        nnoremap <M-.> <C-w>>
+        for l in [['h'], ['j'], ['k'], ['l'], ['w'],
+                \ ['-'], ['=', '+'], [',', '<'], ['.', '>']]
+            if len(l) == 1
+                let s:l = l + l
+            else
+                let s:l = l
+            endif
+            let s:wincmd = ' :wincmd ' . s:l[1] . '<CR>'
+            execute 'nnoremap <M-' . s:l[0] . '>' . s:wincmd
+            execute 'nnoremap <Esc>' . s:l[0] . s:wincmd
+        endfor
     " }
     " Tab management {
         nnoremap <C-w>t :tabnew<CR>
@@ -145,53 +151,11 @@
         nnoremap <C-w>] :tabnext<CR>
     " }
     " Writing Restructured Text or Markdown {
-        noremap  <C-u>1 yyPVr#yyjp
-        noremap  <C-u>2 yyPVr*yyjp
-        noremap  <C-u>3 yypVr=
-        noremap  <C-u>4 yypVr-
-        noremap  <C-u>5 yypVr^
-    " }
-    " Other {
-        nnoremap <leader>mr :MRU<cr>
-        nnoremap <leader>nt :NERDTreeToggle<cr>
-        nnoremap <leader>yy :YRShow<CR>
-        nnoremap <leader>gt :GundoToggle<CR>
-        nnoremap <leader>= :Tabularize /=<CR>
-    " }
-" }
-" Third party bundles {
-    " yankring {
-        let g:yankring_history_file = '.yankring_history'
-    " }
-    " vim-latex - many latex shortcuts and snippets {
-        let g:tex_flavor='latex'
-        let g:Tex_CompileRule_pdf='xelatex -shell-escape'
-        let g:Tex_Menus=0
-        let Tex_UseMakefile=0
-    "}
-    " NERDTree {
-        let NERDTreeIgnore=['\.py[co]$', '\~$']
-    " }
-    " Command-T {
-        let g:CommandTMaxHeight = 15
-    " }
-    " SuperTab {
-        let g:SuperTabDefaultCompletionType = "context"
-        let g:SuperTabLongestEnhanced = 1
-        let g:SuperTabLongestHighlight = 1
-    " }
-    " NerdCommenter {
-        let NERDSpaceDelims = 1
-        let NERDRemoveExtraSpaces = 1
-    " }
-    " Syntastic {
-        let g:syntastic_enable_signs=1
-        let g:syntastic_error_symbol='X'
-        let g:syntastic_warning_symbol='!'
-        let g:syntastic_enable_balloons=1
-        let g:syntastic_enable_highlighting=1
-        let g:syntastic_echo_current_error=1
-        let g:syntastic_python_checkers = ['flake8']
+        noremap <C-u>1 yyPVr#yyjp
+        noremap <C-u>2 yyPVr*yyjp
+        noremap <C-u>3 yypVr=
+        noremap <C-u>4 yypVr-
+        noremap <C-u>5 yypVr^
     " }
 " }
 " vim: set fdm=marker fmr={,}:

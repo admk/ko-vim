@@ -10,7 +10,7 @@ done
 
 echo 'Initialising Vim config'
 if [ ! -e $VIM/.git ]; then
-    git clone -b master https://github.com/admk/vimfiles.git $VIM
+    git clone -b master https://github.com/admk/ko-vim.git $VIM
 else
     cd $VIM
     git pull
@@ -25,9 +25,4 @@ echo 'Initialising Vundle'
 git clone http://github.com/gmarik/vundle.git $VIM/bundle/vundle
 
 echo 'Installing all bundles'
-vim -u $VIM/bundles.vim +BundleInstall +qall
-
-echo 'Installing Command-T'
-cd $VIM/bundle/command-t/ruby/command-t
-ruby extconf.rb
-make
+vim -u $VIM/bundles.vim +BundleInstall! +BundleClean +qall
