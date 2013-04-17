@@ -22,7 +22,7 @@
         set smartcase
         set history=50
         if empty($TMUX)
-            set clipboard=unnamedplus
+            set clipboard=unnamed
         endif
         set backspace=indent,eol,start
         set laststatus=2
