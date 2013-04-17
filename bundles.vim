@@ -18,7 +18,6 @@
         Bundle 'scrooloose/nerdtree'
         Bundle 'scrooloose/syntastic'
         Bundle 'sjl/gundo.vim'
-        Bundle 'terryma/vim-multiple-cursors'
         Bundle 'tpope/vim-fugitive'
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-unimpaired'
