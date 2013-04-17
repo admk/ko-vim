@@ -7,7 +7,7 @@ Installation
 
 Copy & paste the following line into terminal::
 
-    sh <(curl -s https://raw.github.com/admk/vimfiles/develop/bootstrap.sh -L)
+    sh <(curl -s https://raw.github.com/admk/ko-vim/master/bootstrap.sh -L)
 
 
 Changelog
