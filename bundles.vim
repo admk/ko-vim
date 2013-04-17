@@ -6,6 +6,7 @@
     " Bundles {
         Bundle 'airblade/vim-gitgutter'
         Bundle 'altercation/vim-colors-solarized'
+        Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
         Bundle 'davidhalter/jedi-vim'
         Bundle 'ehamberg/vim-cute-python'
         Bundle 'ervandew/supertab'
@@ -17,6 +18,7 @@
         Bundle 'scrooloose/nerdtree'
         Bundle 'scrooloose/syntastic'
         Bundle 'sjl/gundo.vim'
+        Bundle 'terryma/vim-multiple-cursors'
         Bundle 'tpope/vim-fugitive'
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-unimpaired'
