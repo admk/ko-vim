@@ -18,6 +18,7 @@
         Bundle 'scrooloose/nerdtree'
         Bundle 'scrooloose/syntastic'
         Bundle 'sjl/gundo.vim'
+        Bundle 'sjl/vitality.vim'
         Bundle 'tpope/vim-fugitive'
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-unimpaired'

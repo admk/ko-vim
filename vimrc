@@ -21,9 +21,7 @@
         set ignorecase
         set smartcase
         set history=50
-        if empty($TMUX)
-            set clipboard=unnamed
-        endif
+        set clipboard=unnamed
         set backspace=indent,eol,start
         set laststatus=2
         set mouse=a
