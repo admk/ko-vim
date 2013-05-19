@@ -14,13 +14,20 @@
         Bundle 'godlygeek/tabular'
         Bundle 'kien/ctrlp.vim'
         Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+        Bundle 'nelstrom/vim-visual-star-search'
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/nerdtree'
         Bundle 'scrooloose/syntastic'
         Bundle 'sjl/gundo.vim'
+        Bundle 'sjl/vitality.vim'
+        Bundle 'tpope/vim-abolish'
+        Bundle 'tpope/vim-dispatch'
         Bundle 'tpope/vim-fugitive'
+        Bundle 'tpope/vim-repeat'
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-unimpaired'
+        Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+        Bundle 'vim-scripts/matchit.zip'
         Bundle 'vim-scripts/YankRing.vim'
     " }
     filetype plugin indent on

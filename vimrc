@@ -1,7 +1,7 @@
 " Xitong Gao's vimrc
 " General {
     " Vundle {
-        source ~/.vim/bundles.vim
+        runtime bundles.vim
     " }
     " File {
         set noswapfile
@@ -48,7 +48,6 @@
     " Text flow {
         set wrap
         set linebreak
-        set shiftwidth=4
         set textwidth=79
         set colorcolumn=+1
         set formatoptions=rqlmB1
@@ -120,6 +119,7 @@
         let mapleader=","
         nnoremap <leader><space> :nohlsearch<CR>
         nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>  " strip spaces
+        inoremap <C-c> <Esc>[s1z=`]a
     " }
     " Visual mode {
         nnoremap gp `[v`]
