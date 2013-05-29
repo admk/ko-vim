@@ -29,6 +29,7 @@
         Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
         Bundle 'vim-scripts/matchit.zip'
         Bundle 'vim-scripts/YankRing.vim'
+        Bundle 'w0ng/vim-hybrid'
     " }
     filetype plugin indent on
 " }

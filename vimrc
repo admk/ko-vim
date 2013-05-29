@@ -12,7 +12,7 @@
         set fileencoding=utf-8
         autocmd FileType markdown,rst,tex,latex setlocal spell
         autocmd FileType tex,latex setlocal iskeyword+=_ cole=2 nocursorline
-        let g:tex_conceal = 'admg'
+        let g:tex_conceal = 'admgs'
     " }
     " Functional {
         set nocompatible
@@ -65,7 +65,6 @@
         set foldmethod=syntax
         set foldlevel=1
         set foldnestmax=2
-        map <S-f> :let &fen = !&fen<CR>
     " }
     " Other {
         set completeopt=menuone,longest,preview
@@ -92,7 +91,7 @@
             let g:solarized_visibility="low"
             let g:solarized_menu=0
         else
-            colorscheme Tomorrow-Night
+            colorscheme hybrid
             set t_Co=256
         endif
     " }
@@ -117,6 +116,7 @@
         let mapleader=","
         nnoremap <leader><space> :nohlsearch<CR>
         nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>  " strip spaces
+        nnoremap <leader>f :let &fen = !&fen<CR>
         inoremap <C-c> <Esc>[s1z=`]a
     " }
     " Visual mode {
