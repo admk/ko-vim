@@ -3,37 +3,37 @@
     filetype off
     set runtimepath+=~/.vim/bundle/vundle
     call vundle#rc()
-    " Bundles {
-        Bundle 'airblade/vim-gitgutter'
-        Bundle 'altercation/vim-colors-solarized'
-        Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
-        Bundle 'davidhalter/jedi-vim'
-        Bundle 'ehamberg/vim-cute-python'
-        Bundle 'ervandew/supertab'
-        Bundle 'gmarik/vundle'
-        Bundle 'godlygeek/tabular'
-        Bundle 'kien/ctrlp.vim'
-        Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
-        Bundle 'nelstrom/vim-visual-star-search'
-        Bundle 'scrooloose/nerdcommenter'
-        Bundle 'scrooloose/nerdtree'
-        Bundle 'scrooloose/syntastic'
-        Bundle 'sjl/gundo.vim'
-        Bundle 'sjl/vitality.vim'
-        Bundle 'tpope/vim-abolish'
-        Bundle 'tpope/vim-dispatch'
-        Bundle 'tpope/vim-fugitive'
-        Bundle 'tpope/vim-repeat'
-        Bundle 'tpope/vim-surround'
-        Bundle 'tpope/vim-unimpaired'
-        Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
-        Bundle 'vim-scripts/matchit.zip'
-        Bundle 'vim-scripts/YankRing.vim'
-        Bundle 'w0ng/vim-hybrid'
-    " }
-    filetype plugin indent on
+" }
+" Bundles {
+    Bundle 'airblade/vim-gitgutter'
+    Bundle 'altercation/vim-colors-solarized'
+    Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
+    Bundle 'davidhalter/jedi-vim'
+    Bundle 'ehamberg/vim-cute-python'
+    Bundle 'ervandew/supertab'
+    Bundle 'gmarik/vundle'
+    Bundle 'godlygeek/tabular'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+    Bundle 'nelstrom/vim-visual-star-search'
+    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'sjl/gundo.vim'
+    Bundle 'sjl/vitality.vim'
+    Bundle 'tpope/vim-abolish'
+    Bundle 'tpope/vim-dispatch'
+    Bundle 'tpope/vim-fugitive'
+    Bundle 'tpope/vim-repeat'
+    Bundle 'tpope/vim-surround'
+    Bundle 'tpope/vim-unimpaired'
+    Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+    Bundle 'vim-scripts/matchit.zip'
+    Bundle 'vim-scripts/YankRing.vim'
+    Bundle 'w0ng/vim-hybrid'
 " }
 " Bundle configurations {
+    filetype plugin indent on
     let mapleader=","
     " CtrlP {
         nnoremap <leader>cp :CtrlP<cr>
