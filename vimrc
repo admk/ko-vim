@@ -176,7 +176,8 @@
     " }
     " Highlight {
         highlight! link SignColumn ColorColumn
-        highlight clear MatchParen
+        highlight MatchParen ctermbg=NONE guibg=NONE
+        highlight Conceal ctermbg=NONE guibg=NONE
     " }
 " }
 " vim: set fdm=marker fmr={,}:
