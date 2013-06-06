@@ -85,19 +85,14 @@
     " }
     " Colorscheme {
         set background=dark
+        colorscheme Tomorrow-Night
         if has("gui_running")
             set guifont=Menlo\ for\ Powerline:h15
-            colorscheme solarized
             let g:solarized_visibility="low"
             let g:solarized_menu=0
         else
-            colorscheme hybrid
             set t_Co=256
         endif
-    " }
-    " Highlight hacks {
-        highlight! link SignColumn ColorColumn
-        highlight clear MatchParen
     " }
 " }
 " Shortcuts {
@@ -154,6 +149,34 @@
         noremap <C-u>3 yypVr=
         noremap <C-u>4 yypVr-
         noremap <C-u>5 yypVr^
+    " }
+" }
+" Hacks {
+    " Cursor shape {
+        if system("uname") ==# "Linux\n"
+            augroup GnomeCursorShape
+                autocmd InsertEnter * silent execute
+                    \ "!gconftool-2 --type string --set "
+                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
+                    \ "ibeam"
+                autocmd InsertLeave * silent execute
+                    \ "!gconftool-2 --type string --set "
+                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
+                    \ "block"
+                autocmd VimEnter * silent execute
+                    \ "!gconftool-2 --type string --set "
+                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
+                    \ "block"
+                autocmd VimLeave * silent execute
+                    \ "!gconftool-2 --type string --set "
+                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
+                    \ "ibeam"
+            augroup END
+        endif
+    " }
+    " Highlight {
+        highlight! link SignColumn ColorColumn
+        highlight clear MatchParen
     " }
 " }
 " vim: set fdm=marker fmr={,}:
