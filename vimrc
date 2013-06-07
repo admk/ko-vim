@@ -47,7 +47,6 @@
         set wrap
         set linebreak
         set textwidth=79
-        set colorcolumn=+1
         set formatoptions=rqlmB1
         set formatprg=par\ -w79
     " }
@@ -77,7 +76,10 @@
             set guioptions-=L
             set guioptions-=T
         endif
-        set cursorline
+        if !exists('$SSH_CLIENT')
+            set cursorline
+            set colorcolumn=+1
+        endif
         " Mac specific
         if has("gui_macvim")
             set macmeta
