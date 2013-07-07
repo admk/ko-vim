@@ -13,6 +13,15 @@ Copy & paste the following line into terminal::
 Changelog
 =========
 
+Version 2.2
+-----------
+
+*Sun  7 Jul 2013 23:03:22 BST*
+
+* Fixes.
+* Add some colorschemes.
+* Replace powerline with airline
+
 Version 2.1
 -----------
 
