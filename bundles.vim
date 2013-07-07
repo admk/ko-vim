@@ -7,6 +7,7 @@
 " Bundles {
     Bundle 'airblade/vim-gitgutter'
     Bundle 'altercation/vim-colors-solarized'
+    Bundle 'bling/vim-airline'
     Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
     Bundle 'davidhalter/jedi-vim'
     Bundle 'ehamberg/vim-cute-python'
@@ -14,7 +15,7 @@
     Bundle 'gmarik/vundle'
     Bundle 'godlygeek/tabular'
     Bundle 'kien/ctrlp.vim'
-    Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+    Bundle 'nanotech/jellybeans.vim'
     Bundle 'nelstrom/vim-visual-star-search'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'scrooloose/nerdtree'
@@ -35,6 +36,11 @@
 " Bundle configurations {
     filetype plugin indent on
     let mapleader=","
+    " Airline {
+        let g:airline_left_sep=''
+        let g:airline_right_sep=''
+        let g:airline_theme='light'
+    " }
     " CtrlP {
         nnoremap <leader>cp :CtrlP<cr>
         nnoremap <leader>mr :CtrlPMRUFiles<cr>

@@ -87,9 +87,9 @@
     " }
     " Colorscheme {
         set background=dark
-        colorscheme Tomorrow-Night
+        colorscheme solarized
         if has("gui_running")
-            set guifont=Menlo\ for\ Powerline:h15
+            set guifont=Monaco:h15
             let g:solarized_visibility="low"
             let g:solarized_menu=0
         else
