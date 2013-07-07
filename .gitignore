@@ -1,12 +1,2 @@
-# Mac
-.DS_Store
-
-# Vim
-view/
-spell/
-*.py[cxo]
-*.sw*
-session.vim
-
 # Vundle
 bundle/

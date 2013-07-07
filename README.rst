@@ -7,11 +7,28 @@ Installation
 
 Copy & paste the following line into terminal::
 
-    sh <(curl -s https://raw.github.com/admk/vimfiles/develop/bootstrap.sh -L)
+    sh <(curl -s https://raw.github.com/admk/ko-vim/master/bootstrap.sh -L)
 
 
 Changelog
 =========
+
+Version 2.2
+-----------
+
+*Sun  7 Jul 2013 23:03:22 BST*
+
+* Fixes.
+* Add some colorschemes.
+* Replace powerline with airline
+
+Version 2.1
+-----------
+
+*Wed 17 Apr 2013 21:48:31 BST*
+
+* Fixes.
+* Add Tomorrow-Night theme.
 
 Version 2.0
 -----------
@@ -28,11 +45,11 @@ Version 1.1
 
 *Tue  5 Mar 2013 14:04:48 GMT*
 
-Fix bundles.vim not sourced.
+* Fix bundles.vim not sourced.
 
 Version 1.0
 -----------
 
 *Tue  5 Mar 2013 13:57:09 GMT*
 
-Initial release.
+* Initial release.

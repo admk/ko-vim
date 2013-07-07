@@ -1,7 +1,7 @@
 " Xitong Gao's vimrc
 " General {
     " Vundle {
-        source ~/.vim/bundles.vim
+        runtime bundles.vim
     " }
     " File {
         set noswapfile
@@ -12,7 +12,7 @@
         set fileencoding=utf-8
         autocmd FileType markdown,rst,tex,latex setlocal spell
         autocmd FileType tex,latex setlocal iskeyword+=_ cole=2 nocursorline
-        let g:tex_conceal = 'admg'
+        let g:tex_conceal = 'admgs'
     " }
     " Functional {
         set nocompatible
@@ -24,6 +24,7 @@
         set clipboard=unnamed
         set backspace=indent,eol,start
         set laststatus=2
+        set mouse=a
     " }
     " Visual {
         set hlsearch
@@ -45,9 +46,7 @@
     " Text flow {
         set wrap
         set linebreak
-        set shiftwidth=4
         set textwidth=79
-        set colorcolumn=+1
         set formatoptions=rqlmB1
         set formatprg=par\ -w79
     " }
@@ -65,7 +64,6 @@
         set foldmethod=syntax
         set foldlevel=1
         set foldnestmax=2
-        map <S-f> :let &fen = !&fen<CR>
     " }
     " Other {
         set completeopt=menuone,longest,preview
@@ -78,22 +76,25 @@
             set guioptions-=L
             set guioptions-=T
         endif
-        set cursorline
+        if !exists('$SSH_CLIENT')
+            set cursorline
+            set colorcolumn=+1
+        endif
         " Mac specific
         if has("gui_macvim")
             set macmeta
         endif
     " }
     " Colorscheme {
-        set guifont=Menlo\ for\ Powerline:h15
         set background=dark
-        colors solarized
-        let g:solarized_visibility="low"
-        let g:solarized_menu=0
-    " }
-    " Highlight hacks {
-        highlight! link SignColumn ColorColumn
-        highlight clear MatchParen
+        colorscheme solarized
+        if has("gui_running")
+            set guifont=Monaco:h15
+            let g:solarized_visibility="low"
+            let g:solarized_menu=0
+        else
+            set t_Co=256
+        endif
     " }
 " }
 " Shortcuts {
@@ -104,14 +105,16 @@
         nnoremap j gj
         nnoremap k gk
         nnoremap Y y$
+        inoremap £ #
     " }
     " General {
         noremap / q/i
         noremap ? q?i
-        noremap K k
         let mapleader=","
         nnoremap <leader><space> :nohlsearch<CR>
         nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>  " strip spaces
+        nnoremap <leader>f :let &fen = !&fen<CR>
+        inoremap <C-c> <Esc>[s1z=`]a
     " }
     " Visual mode {
         nnoremap gp `[v`]
@@ -119,20 +122,23 @@
         vnoremap > >gv
     " }
     " Command line {
-        cnoremap <C-A> <Home>
-        cnoremap <C-E> <End>
-        cnoremap <C-K> <C-U>
+        cnoremap <C-a> <Home>
+        cnoremap <C-e> <End>
+        cnoremap <C-k> <C-u>
         cnoremap cd. lcd %:p:h
     " }
     " Window management {
-        nnoremap <M-h> :wincmd h<CR>
-        nnoremap <M-j> :wincmd j<CR>
-        nnoremap <M-k> :wincmd k<CR>
-        nnoremap <M-l> :wincmd l<CR>
-        nnoremap <M--> :wincmd -<CR>
-        nnoremap <M-=> :wincmd +<CR>
-        nnoremap <M-,> :wincmd <<CR>
-        nnoremap <M-.> :wincmd ><CR>
+        for l in [['h'], ['j'], ['k'], ['l'], ['w'],
+                \ ['-'], ['=', '+'], [',', '<'], ['.', '>']]
+            if len(l) == 1
+                let s:l = l + l
+            else
+                let s:l = l
+            endif
+            let s:wincmd = ' :wincmd ' . s:l[1] . '<CR>'
+            execute 'nnoremap <M-' . s:l[0] . '>' . s:wincmd
+            execute 'nnoremap <Esc>' . s:l[0] . s:wincmd
+        endfor
     " }
     " Tab management {
         nnoremap <C-w>t :tabnew<CR>
@@ -140,11 +146,40 @@
         nnoremap <C-w>] :tabnext<CR>
     " }
     " Writing Restructured Text or Markdown {
-        noremap  <C-u>1 yyPVr#yyjp
-        noremap  <C-u>2 yyPVr*yyjp
-        noremap  <C-u>3 yypVr=
-        noremap  <C-u>4 yypVr-
-        noremap  <C-u>5 yypVr^
+        noremap <C-u>1 yyPVr#yyjp
+        noremap <C-u>2 yyPVr*yyjp
+        noremap <C-u>3 yypVr=
+        noremap <C-u>4 yypVr-
+        noremap <C-u>5 yypVr^
+    " }
+" }
+" Hacks {
+    " Cursor shape {
+        if system("uname") ==# "Linux\n"
+            augroup GnomeCursorShape
+                autocmd InsertEnter * silent execute
+                    \ "!gconftool-2 --type string --set "
+                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
+                    \ "ibeam"
+                autocmd InsertLeave * silent execute
+                    \ "!gconftool-2 --type string --set "
+                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
+                    \ "block"
+                autocmd VimEnter * silent execute
+                    \ "!gconftool-2 --type string --set "
+                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
+                    \ "block"
+                autocmd VimLeave * silent execute
+                    \ "!gconftool-2 --type string --set "
+                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
+                    \ "ibeam"
+            augroup END
+        endif
+    " }
+    " Highlight {
+        highlight! link SignColumn ColorColumn
+        highlight MatchParen ctermbg=NONE guibg=NONE
+        highlight Conceal ctermbg=NONE guibg=NONE
     " }
 " }
 " vim: set fdm=marker fmr={,}:
