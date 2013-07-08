@@ -157,6 +157,7 @@
     " Cursor shape {
         if system("uname") ==# "Linux\n"
             augroup GnomeCursorShape
+                autocmd!
                 autocmd InsertEnter * silent execute
                     \ "!gconftool-2 --type string --set "
                     \ "/apps/gnome-terminal/profiles/Default/cursor_shape"

@@ -37,9 +37,51 @@
     filetype plugin indent on
     let mapleader=","
     " Airline {
+        augroup WhiteSpaceWarning
+            autocmd!
+            autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
+            autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
+        augroup END
+        function! StatuslineTabWarning()
+            if exists("b:statusline_tab_warning")
+                return b:statusline_tab_warning
+            endif
+            let tabs = search('^\t', 'nw') != 0
+            let spaces = search('^ ', 'nw') != 0
+
+            if tabs && spaces
+                let b:statusline_tab_warning =  'mixed-indenting'
+            elseif (spaces && !&et) || (tabs && &et)
+                let b:statusline_tab_warning = '&et'
+            else
+                let b:statusline_tab_warning = ''
+            endif
+        endfunction
+        function! StatuslineTrailingSpaceWarning()
+            if exists("b:statusline_trailing_space_warning")
+                return b:statusline_trailing_space_warning
+            endif
+            if search('\s\+$', 'nw') != 0
+                let b:statusline_trailing_space_warning = '\s'
+            else
+                let b:statusline_trailing_space_warning = ''
+            endif
+        endfunction
+        function! StatuslineWhiteSpaceWarning()
+            let tabs = StatuslineTabWarning()
+            let spaces = StatuslineTrailingSpaceWarning()
+            if !empty(tabs) && !empty(spaces)
+                let sep = ','
+            else
+                let sep = ''
+            endif
+            return tabs . sep . spaces
+        endfunction
         let g:airline_left_sep=''
         let g:airline_right_sep=''
         let g:airline_theme='light'
+        let g:airline_section_y='%{StatuslineWhiteSpaceWarning()}'
+        let g:airline_section_z='%3p%%:%3l'
     " }
     " CtrlP {
         nnoremap <leader>cp :CtrlP<cr>
