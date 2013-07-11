@@ -43,29 +43,29 @@
             autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
         augroup END
         function! StatuslineTabWarning()
-            if exists("b:statusline_tab_warning")
-                return b:statusline_tab_warning
-            endif
-            let tabs = search('^\t', 'nw') != 0
-            let spaces = search('^ ', 'nw') != 0
+            if !exists("b:statusline_tab_warning")
+                let tabs = search('^\t', 'nw') != 0
+                let spaces = search('^ ', 'nw') != 0
 
-            if tabs && spaces
-                let b:statusline_tab_warning =  'mixed-indenting'
-            elseif (spaces && !&et) || (tabs && &et)
-                let b:statusline_tab_warning = '&et'
-            else
-                let b:statusline_tab_warning = ''
+                if tabs && spaces
+                    let b:statusline_tab_warning =  'mixed-indenting'
+                elseif (spaces && !&et) || (tabs && &et)
+                    let b:statusline_tab_warning = '&et'
+                else
+                    let b:statusline_tab_warning = ''
+                endif
             endif
+            return b:statusline_tab_warning
         endfunction
         function! StatuslineTrailingSpaceWarning()
-            if exists("b:statusline_trailing_space_warning")
-                return b:statusline_trailing_space_warning
+            if !exists("b:statusline_trailing_space_warning")
+                if search('\s\+$', 'nw') != 0
+                    let b:statusline_trailing_space_warning = '\s'
+                else
+                    let b:statusline_trailing_space_warning = ''
+                endif
             endif
-            if search('\s\+$', 'nw') != 0
-                let b:statusline_trailing_space_warning = '\s'
-            else
-                let b:statusline_trailing_space_warning = ''
-            endif
+            return b:statusline_trailing_space_warning
         endfunction
         function! StatuslineWhiteSpaceWarning()
             let tabs = StatuslineTabWarning()
