@@ -173,7 +173,7 @@
                 autocmd VimLeave * silent execute
                     \ "!gconftool-2 --type string --set "
                     \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
-                    \ "ibeam"
+                    \ "block"
             augroup END
         endif
     " }
