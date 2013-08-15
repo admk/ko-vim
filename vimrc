@@ -86,14 +86,14 @@
         endif
     " }
     " Colorscheme {
-        set background=dark
-        colorscheme solarized
         if has("gui_running")
             set guifont=Monaco:h15
+            set background=light
+            colorscheme solarized
             let g:solarized_visibility="low"
             let g:solarized_menu=0
         else
-            set t_Co=256
+            colorscheme bubblegum
         endif
     " }
 " }

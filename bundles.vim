@@ -7,19 +7,20 @@
 " Bundles {
     Bundle 'airblade/vim-gitgutter'
     Bundle 'altercation/vim-colors-solarized'
+    Bundle 'baskerville/bubblegum'
     Bundle 'bling/vim-airline'
     Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
-    Bundle 'davidhalter/jedi-vim'
     Bundle 'ehamberg/vim-cute-python'
-    Bundle 'ervandew/supertab'
     Bundle 'gmarik/vundle'
     Bundle 'godlygeek/tabular'
     Bundle 'kien/ctrlp.vim'
     Bundle 'nanotech/jellybeans.vim'
     Bundle 'nelstrom/vim-visual-star-search'
+    Bundle 'Pychimp/vim-luna'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'scrooloose/nerdtree'
     Bundle 'scrooloose/syntastic'
+    Bundle 'SirVer/ultisnips'
     Bundle 'sjl/gundo.vim'
     Bundle 'sjl/vitality.vim'
     Bundle 'tpope/vim-abolish'
@@ -28,59 +29,21 @@
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
-    Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+    Bundle 'Valloric/YouCompleteMe'
     Bundle 'vim-scripts/matchit.zip'
     Bundle 'vim-scripts/YankRing.vim'
     Bundle 'w0ng/vim-hybrid'
 " }
-" Bundle configurations {
+" Finalisation {
     filetype plugin indent on
     let mapleader=","
+" }
+" Bundle configurations {
     " Airline {
-        augroup WhiteSpaceWarning
-            autocmd!
-            autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
-            autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
-        augroup END
-        function! StatuslineTabWarning()
-            if exists("b:statusline_tab_warning")
-                return b:statusline_tab_warning
-            endif
-            let tabs = search('^\t', 'nw') != 0
-            let spaces = search('^ ', 'nw') != 0
-
-            if tabs && spaces
-                let b:statusline_tab_warning =  'mixed-indenting'
-            elseif (spaces && !&et) || (tabs && &et)
-                let b:statusline_tab_warning = '&et'
-            else
-                let b:statusline_tab_warning = ''
-            endif
-        endfunction
-        function! StatuslineTrailingSpaceWarning()
-            if exists("b:statusline_trailing_space_warning")
-                return b:statusline_trailing_space_warning
-            endif
-            if search('\s\+$', 'nw') != 0
-                let b:statusline_trailing_space_warning = '\s'
-            else
-                let b:statusline_trailing_space_warning = ''
-            endif
-        endfunction
-        function! StatuslineWhiteSpaceWarning()
-            let tabs = StatuslineTabWarning()
-            let spaces = StatuslineTrailingSpaceWarning()
-            if !empty(tabs) && !empty(spaces)
-                let sep = ','
-            else
-                let sep = ''
-            endif
-            return tabs . sep . spaces
-        endfunction
         let g:airline_left_sep=''
         let g:airline_right_sep=''
-        let g:airline_theme='light'
-        let g:airline_section_y='%{StatuslineWhiteSpaceWarning()}'
+        let g:airline_theme='bubblegum'
+        let g:airline_section_y=''
         let g:airline_section_z='%3p%%:%3l'
     " }
     " CtrlP {
@@ -91,12 +54,6 @@
         nnoremap <leader>yy :YRShow<CR>
         let g:yankring_history_file = '.yankring_history'
     " }
-    " vim-latex - many latex shortcuts and snippets {
-        let g:tex_flavor='latex'
-        let g:Tex_CompileRule_pdf='xelatex -shell-escape'
-        let g:Tex_Menus=0
-        let Tex_UseMakefile=0
-    "}
     " NERDTree {
         nnoremap <leader>nt :NERDTreeToggle<cr>
         let NERDTreeIgnore=['\.py[co]$', '\~$', '__pycache__']
@@ -125,8 +82,10 @@
     " Tabularize {
         nnoremap <leader>= :Tabularize /=<CR>
     " }
-    " Jedi {
-        let g:jedi#popup_on_dot = 0
+    " UltiSnips {
+        let g:UltiSnipsExpandTrigger = '<c-h>'
+        let g:UltiSnipsJumpForwardTrigger = '<c-h>'
+        let g:UltiSnipsJumpBackwardTrigger = '<c-l>'
     " }
 " }
 " vim: set fdm=marker fmr={,}:
