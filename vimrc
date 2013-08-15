@@ -154,29 +154,6 @@
     " }
 " }
 " Hacks {
-    " Cursor shape {
-        if system("uname") ==# "Linux\n"
-            augroup GnomeCursorShape
-                autocmd!
-                autocmd InsertEnter * silent execute
-                    \ "!gconftool-2 --type string --set "
-                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
-                    \ "ibeam"
-                autocmd InsertLeave * silent execute
-                    \ "!gconftool-2 --type string --set "
-                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
-                    \ "block"
-                autocmd VimEnter * silent execute
-                    \ "!gconftool-2 --type string --set "
-                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
-                    \ "block"
-                autocmd VimLeave * silent execute
-                    \ "!gconftool-2 --type string --set "
-                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
-                    \ "block"
-            augroup END
-        endif
-    " }
     " Highlight {
         highlight! link SignColumn ColorColumn
         highlight MatchParen ctermbg=NONE guibg=NONE
