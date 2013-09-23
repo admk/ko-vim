@@ -53,3 +53,6 @@ Version 1.0
 *Tue  5 Mar 2013 13:57:09 GMT*
 
 * Initial release.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/admk/ko-vim/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
