@@ -55,4 +55,6 @@ Version 1.0
 * Initial release.
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/admk/ko-vim/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+.. image:: https://d2weczhvl823v0.cloudfront.net/admk/ko-vim/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
