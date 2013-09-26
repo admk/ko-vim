@@ -89,12 +89,13 @@
         if has("gui_running")
             set guifont=Monaco:h15
             set background=light
-            colorscheme solarized
             let g:solarized_visibility="low"
             let g:solarized_menu=0
         else
-            colorscheme bubblegum
+            let g:solarized_termcolors=256
+            set background=dark
         endif
+        colorscheme solarized
     " }
 " }
 " Shortcuts {
@@ -142,8 +143,22 @@
     " }
     " Tab management {
         nnoremap <C-w>t :tabnew<CR>
-        nnoremap <C-w>[ :tabprev<CR>
-        nnoremap <C-w>] :tabnext<CR>
+        nnoremap <C-w>{ :tabprev<CR>
+        nnoremap <C-w>} :tabnext<CR>
+        nnoremap <M-t> :tabnew<CR>
+        nnoremap <M-{> :tabprev<CR>
+        nnoremap <M-}> :tabnext<CR>
+        nnoremap <Esc>t :tabnew<CR>
+        nnoremap <Esc>{ :tabprev<CR>
+        nnoremap <Esc>} :tabnext<CR>
+    " }
+    " Buffer management {
+        nnoremap <C-w>p :bprev<CR>
+        nnoremap <C-w>n :bnext<CR>
+        nnoremap <M-p> :bprev<CR>
+        nnoremap <M-n> :bnext<CR>
+        nnoremap <Esc>p :bprev<CR>
+        nnoremap <Esc>n :bnext<CR>
     " }
     " Writing Restructured Text or Markdown {
         noremap <C-u>1 yyPVr#yyjp
