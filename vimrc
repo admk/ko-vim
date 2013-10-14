@@ -143,22 +143,12 @@
     " }
     " Tab management {
         nnoremap <C-w>t :tabnew<CR>
-        nnoremap <C-w>{ :tabprev<CR>
-        nnoremap <C-w>} :tabnext<CR>
         nnoremap <M-t> :tabnew<CR>
-        nnoremap <M-{> :tabprev<CR>
-        nnoremap <M-}> :tabnext<CR>
         nnoremap <Esc>t :tabnew<CR>
-        nnoremap <Esc>{ :tabprev<CR>
-        nnoremap <Esc>} :tabnext<CR>
     " }
     " Buffer management {
-        nnoremap <C-w>p :bprev<CR>
-        nnoremap <C-w>n :bnext<CR>
-        nnoremap <M-p> :bprev<CR>
-        nnoremap <M-n> :bnext<CR>
-        nnoremap <Esc>p :bprev<CR>
-        nnoremap <Esc>n :bnext<CR>
+        nnoremap gB :bprev<CR>
+        nnoremap gb :bnext<CR>
     " }
     " Writing Restructured Text or Markdown {
         noremap <C-u>1 yyPVr#yyjp
