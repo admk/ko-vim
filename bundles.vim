@@ -7,14 +7,15 @@
         call vundle#rc()
     " }
     " Bundles {
+        Bundle 'admk/vim-isort'
         Bundle 'airblade/vim-gitgutter'
-        Bundle 'altercation/vim-colors-solarized'
         Bundle 'bling/vim-airline'
         Bundle 'ehamberg/vim-cute-python'
+        Bundle 'flazz/vim-colorschemes'
         Bundle 'gmarik/vundle'
         Bundle 'godlygeek/tabular'
         Bundle 'kien/ctrlp.vim'
-        Bundle 'nanotech/jellybeans.vim'
+        Bundle 'michaeljsmith/vim-indent-object'
         Bundle 'nelstrom/vim-visual-star-search'
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/nerdtree'
@@ -29,9 +30,9 @@
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-unimpaired'
         Bundle 'Valloric/YouCompleteMe'
-        Bundle 'vim-scripts/matchit.zip'
-        Bundle 'vim-scripts/YankRing.vim'
-        Bundle 'w0ng/vim-hybrid'
+        Bundle 'indentpython.vim'
+        Bundle 'matchit.zip'
+        Bundle 'YankRing.vim'
     " }
     " Finalisation {
         filetype plugin indent on
@@ -46,7 +47,8 @@
         let g:airline_section_y=''
         let g:airline_section_z='%3p%%:%3l'
         let g:airline#extensions#tabline#enabled = 1
-        let g:airline#extensions#tabline#show_buffers = 1
+        let g:airline#extensions#tabline#show_buffers = 0
+        let g:airline#extensions#tabline#tab_min_count = 2
     " }
     " CtrlP {
         nnoremap <leader>cp :CtrlP<cr>
