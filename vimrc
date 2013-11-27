@@ -48,7 +48,7 @@
         set linebreak
         set textwidth=79
         set formatoptions=rqlmB1
-        set formatprg=par\ -w79
+        set formatprg=par\ g\ -w79
     " }
     " Indentation {
         set autoindent
@@ -86,15 +86,16 @@
         endif
     " }
     " Colorscheme {
-        set background=dark
-        colorscheme solarized
         if has("gui_running")
             set guifont=Monaco:h15
+            set background=light
             let g:solarized_visibility="low"
             let g:solarized_menu=0
         else
-            set t_Co=256
+            let g:solarized_termcolors=256
+            set background=dark
         endif
+        colorscheme solarized
     " }
 " }
 " Shortcuts {
@@ -142,8 +143,12 @@
     " }
     " Tab management {
         nnoremap <C-w>t :tabnew<CR>
-        nnoremap <C-w>[ :tabprev<CR>
-        nnoremap <C-w>] :tabnext<CR>
+        nnoremap <M-t> :tabnew<CR>
+        nnoremap <Esc>t :tabnew<CR>
+    " }
+    " Buffer management {
+        nnoremap gB :bprev<CR>
+        nnoremap gb :bnext<CR>
     " }
     " Writing Restructured Text or Markdown {
         noremap <C-u>1 yyPVr#yyjp
@@ -154,28 +159,6 @@
     " }
 " }
 " Hacks {
-    " Cursor shape {
-        if system("uname") ==# "Linux\n"
-            augroup GnomeCursorShape
-                autocmd InsertEnter * silent execute
-                    \ "!gconftool-2 --type string --set "
-                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
-                    \ "ibeam"
-                autocmd InsertLeave * silent execute
-                    \ "!gconftool-2 --type string --set "
-                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
-                    \ "block"
-                autocmd VimEnter * silent execute
-                    \ "!gconftool-2 --type string --set "
-                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
-                    \ "block"
-                autocmd VimLeave * silent execute
-                    \ "!gconftool-2 --type string --set "
-                    \ "/apps/gnome-terminal/profiles/Default/cursor_shape"
-                    \ "ibeam"
-            augroup END
-        endif
-    " }
     " Highlight {
         highlight! link SignColumn ColorColumn
         highlight MatchParen ctermbg=NONE guibg=NONE

@@ -1,45 +1,54 @@
-" Initialisation {
-    set nocompatible
-    filetype off
-    set runtimepath+=~/.vim/bundle/vundle
-    call vundle#rc()
+" Xitong Gao's Bundles
+" Setups {
+    " Initialisation {
+        set nocompatible
+        filetype off
+        set runtimepath+=~/.vim/bundle/vundle
+        call vundle#rc()
+    " }
+    " Bundles {
+        Bundle 'bling/vim-airline'
+        Bundle 'ehamberg/vim-cute-python'
+        Bundle 'fisadev/vim-isort'
+        Bundle 'flazz/vim-colorschemes'
+        Bundle 'gmarik/vundle'
+        Bundle 'godlygeek/tabular'
+        Bundle 'kien/ctrlp.vim'
+        Bundle 'mhinz/vim-signify'
+        Bundle 'michaeljsmith/vim-indent-object'
+        Bundle 'nelstrom/vim-visual-star-search'
+        Bundle 'scrooloose/nerdcommenter'
+        Bundle 'scrooloose/nerdtree'
+        Bundle 'scrooloose/syntastic'
+        Bundle 'SirVer/ultisnips'
+        Bundle 'sjl/gundo.vim'
+        Bundle 'sjl/vitality.vim'
+        Bundle 'tpope/vim-abolish'
+        Bundle 'tpope/vim-dispatch'
+        Bundle 'tpope/vim-fugitive'
+        Bundle 'tpope/vim-repeat'
+        Bundle 'tpope/vim-surround'
+        Bundle 'tpope/vim-unimpaired'
+        Bundle 'Valloric/YouCompleteMe'
+        Bundle 'indentpython.vim'
+        Bundle 'matchit.zip'
+        Bundle 'YankRing.vim'
+    " }
+    " Finalisation {
+        filetype plugin indent on
+        let mapleader=","
+    " }
 " }
-" Bundles {
-    Bundle 'airblade/vim-gitgutter'
-    Bundle 'altercation/vim-colors-solarized'
-    Bundle 'bling/vim-airline'
-    Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
-    Bundle 'davidhalter/jedi-vim'
-    Bundle 'ehamberg/vim-cute-python'
-    Bundle 'ervandew/supertab'
-    Bundle 'gmarik/vundle'
-    Bundle 'godlygeek/tabular'
-    Bundle 'kien/ctrlp.vim'
-    Bundle 'nanotech/jellybeans.vim'
-    Bundle 'nelstrom/vim-visual-star-search'
-    Bundle 'scrooloose/nerdcommenter'
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'scrooloose/syntastic'
-    Bundle 'sjl/gundo.vim'
-    Bundle 'sjl/vitality.vim'
-    Bundle 'tpope/vim-abolish'
-    Bundle 'tpope/vim-dispatch'
-    Bundle 'tpope/vim-fugitive'
-    Bundle 'tpope/vim-repeat'
-    Bundle 'tpope/vim-surround'
-    Bundle 'tpope/vim-unimpaired'
-    Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
-    Bundle 'vim-scripts/matchit.zip'
-    Bundle 'vim-scripts/YankRing.vim'
-    Bundle 'w0ng/vim-hybrid'
-" }
-" Bundle configurations {
-    filetype plugin indent on
-    let mapleader=","
+" Configurations {
     " Airline {
         let g:airline_left_sep=''
         let g:airline_right_sep=''
-        let g:airline_theme='light'
+        let g:airline_section_b='%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
+        let g:airline_section_y=''
+        let g:airline_section_z='%3p%%:%3l'
+        let g:airline#extensions#tabline#enabled = 1
+        let g:airline#extensions#tabline#show_buffers = 0
+        let g:airline#extensions#tabline#tab_min_count = 2
     " }
     " CtrlP {
         nnoremap <leader>cp :CtrlP<cr>
@@ -49,12 +58,6 @@
         nnoremap <leader>yy :YRShow<CR>
         let g:yankring_history_file = '.yankring_history'
     " }
-    " vim-latex - many latex shortcuts and snippets {
-        let g:tex_flavor='latex'
-        let g:Tex_CompileRule_pdf='xelatex -shell-escape'
-        let g:Tex_Menus=0
-        let Tex_UseMakefile=0
-    "}
     " NERDTree {
         nnoremap <leader>nt :NERDTreeToggle<cr>
         let NERDTreeIgnore=['\.py[co]$', '\~$', '__pycache__']
@@ -83,8 +86,10 @@
     " Tabularize {
         nnoremap <leader>= :Tabularize /=<CR>
     " }
-    " Jedi {
-        let g:jedi#popup_on_dot = 0
+    " UltiSnips {
+        let g:UltiSnipsExpandTrigger = '<c-h>'
+        let g:UltiSnipsJumpForwardTrigger = '<c-h>'
+        let g:UltiSnipsJumpBackwardTrigger = '<c-l>'
     " }
 " }
 " vim: set fdm=marker fmr={,}:
