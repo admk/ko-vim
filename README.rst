@@ -13,6 +13,14 @@ Copy & paste the following line into terminal::
 Changelog
 =========
 
+Version 2.3
+-----------
+
+*Wed 27 Nov 2013 16:25:19 GMT*
+
+* Fixes.
+* Lots of bundle changes.
+
 Version 2.2
 -----------
 
@@ -20,7 +28,7 @@ Version 2.2
 
 * Fixes.
 * Add some colorschemes.
-* Replace powerline with airline
+* Replace powerline with airline.
 
 Version 2.1
 -----------
