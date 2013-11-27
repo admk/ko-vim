@@ -7,14 +7,14 @@
         call vundle#rc()
     " }
     " Bundles {
-        Bundle 'admk/vim-isort'
-        Bundle 'airblade/vim-gitgutter'
         Bundle 'bling/vim-airline'
         Bundle 'ehamberg/vim-cute-python'
+        Bundle 'fisadev/vim-isort'
         Bundle 'flazz/vim-colorschemes'
         Bundle 'gmarik/vundle'
         Bundle 'godlygeek/tabular'
         Bundle 'kien/ctrlp.vim'
+        Bundle 'mhinz/vim-signify'
         Bundle 'michaeljsmith/vim-indent-object'
         Bundle 'nelstrom/vim-visual-star-search'
         Bundle 'scrooloose/nerdcommenter'

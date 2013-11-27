@@ -48,7 +48,7 @@
         set linebreak
         set textwidth=79
         set formatoptions=rqlmB1
-        set formatprg=par\ -w79
+        set formatprg=par\ g\ -w79
     " }
     " Indentation {
         set autoindent
