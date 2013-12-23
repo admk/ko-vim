@@ -28,7 +28,6 @@
     " }
     " Visual {
         set hlsearch
-        set number
         set showmatch
         set showcmd
         set noshowmode
@@ -87,15 +86,17 @@
     " }
     " Colorscheme {
         if has("gui_running")
-            set guifont=Monaco:h15
+            set guifont=Monaco:h10
+            set noantialias
             set background=light
             let g:solarized_visibility="low"
             let g:solarized_menu=0
+            colorscheme codeschool
         else
             let g:solarized_termcolors=256
             set background=dark
+            colorscheme solarized
         endif
-        colorscheme solarized
     " }
 " }
 " Shortcuts {
@@ -128,7 +129,7 @@
         cnoremap <C-k> <C-u>
         cnoremap cd. lcd %:p:h
     " }
-    " Window management {
+    " File switching {
         for l in [['h'], ['j'], ['k'], ['l'], ['w'],
                 \ ['-'], ['=', '+'], [',', '<'], ['.', '>']]
             if len(l) == 1
@@ -140,13 +141,9 @@
             execute 'nnoremap <M-' . s:l[0] . '>' . s:wincmd
             execute 'nnoremap <Esc>' . s:l[0] . s:wincmd
         endfor
-    " }
-    " Tab management {
         nnoremap <C-w>t :tabnew<CR>
         nnoremap <M-t> :tabnew<CR>
         nnoremap <Esc>t :tabnew<CR>
-    " }
-    " Buffer management {
         nnoremap gB :bprev<CR>
         nnoremap gb :bnext<CR>
     " }
@@ -161,8 +158,8 @@
 " Hacks {
     " Highlight {
         highlight! link SignColumn ColorColumn
+        highlight! link Conceal Keyword
         highlight MatchParen ctermbg=NONE guibg=NONE
-        highlight Conceal ctermbg=NONE guibg=NONE
     " }
 " }
 " vim: set fdm=marker fmr={,}:

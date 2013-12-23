@@ -62,9 +62,6 @@
         nnoremap <leader>nt :NERDTreeToggle<cr>
         let NERDTreeIgnore=['\.py[co]$', '\~$', '__pycache__']
     " }
-    " Command-T {
-        let g:CommandTMaxHeight = 15
-    " }
     " SuperTab {
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabLongestEnhanced = 1
