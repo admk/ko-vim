@@ -17,6 +17,7 @@
         Bundle 'mhinz/vim-signify'
         Bundle 'michaeljsmith/vim-indent-object'
         Bundle 'nelstrom/vim-visual-star-search'
+        Bundle 'reedes/vim-colors-pencil'
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/nerdtree'
         Bundle 'scrooloose/syntastic'
@@ -41,6 +42,7 @@
 " }
 " Configurations {
     " Airline {
+        let g:airline_theme='light'
         let g:airline_left_sep=''
         let g:airline_right_sep=''
         let g:airline_section_b='%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'

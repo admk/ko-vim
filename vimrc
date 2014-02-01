@@ -86,17 +86,13 @@
     " }
     " Colorscheme {
         if has("gui_running")
-            set guifont=Monaco:h10
-            set noantialias
-            set background=light
+            set guifont=Cousine:h16
             let g:solarized_visibility="low"
             let g:solarized_menu=0
-            colorscheme codeschool
         else
             let g:solarized_termcolors=256
-            set background=dark
-            colorscheme solarized
         endif
+        colorscheme pencil
     " }
 " }
 " Shortcuts {
