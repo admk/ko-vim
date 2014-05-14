@@ -7,17 +7,17 @@
         call vundle#rc()
     " }
     " Bundles {
+        Bundle 'admk/vim-best-colors'
         Bundle 'bling/vim-airline'
         Bundle 'ehamberg/vim-cute-python'
-        Bundle 'fisadev/vim-isort'
-        Bundle 'flazz/vim-colorschemes'
+        Bundle 'admk/vim-isort'
         Bundle 'gmarik/vundle'
         Bundle 'godlygeek/tabular'
+        Bundle 'hdima/python-syntax'
         Bundle 'kien/ctrlp.vim'
         Bundle 'mhinz/vim-signify'
         Bundle 'michaeljsmith/vim-indent-object'
         Bundle 'nelstrom/vim-visual-star-search'
-        Bundle 'reedes/vim-colors-pencil'
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/nerdtree'
         Bundle 'scrooloose/syntastic'
@@ -27,6 +27,7 @@
         Bundle 'tpope/vim-abolish'
         Bundle 'tpope/vim-dispatch'
         Bundle 'tpope/vim-fugitive'
+        Bundle 'tpope/vim-markdown'
         Bundle 'tpope/vim-repeat'
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-unimpaired'
@@ -89,6 +90,9 @@
         let g:UltiSnipsExpandTrigger = '<c-h>'
         let g:UltiSnipsJumpForwardTrigger = '<c-h>'
         let g:UltiSnipsJumpBackwardTrigger = '<c-l>'
+    " }
+    " Python Syntax {
+        let python_highlight_all = 1
     " }
 " }
 " vim: set fdm=marker fmr={,}:

@@ -103,7 +103,8 @@
         nnoremap j gj
         nnoremap k gk
         nnoremap Y y$
-        inoremap £ #
+        inoremap £ x<BS>#
+        inoremap # x<BS>#
     " }
     " General {
         noremap / q/i
