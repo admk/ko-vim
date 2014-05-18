@@ -8,6 +8,7 @@
     " }
     " Bundles {
         Bundle 'admk/vim-best-colors'
+        Bundle 'davidhalter/jedi-vim'
         Bundle 'bling/vim-airline'
         Bundle 'ehamberg/vim-cute-python'
         Bundle 'admk/vim-isort'
@@ -43,7 +44,7 @@
 " }
 " Configurations {
     " Airline {
-        let g:airline_theme='light'
+        let g:airline_theme='pencil'
         let g:airline_left_sep=''
         let g:airline_right_sep=''
         let g:airline_section_b='%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
@@ -93,6 +94,10 @@
     " }
     " Python Syntax {
         let python_highlight_all = 1
+    " }
+    " jedi-vim {
+        let g:jedi#popup_on_dot = 0
+        let g:jedi#popup_select_first = 0
     " }
 " }
 " vim: set fdm=marker fmr={,}:
